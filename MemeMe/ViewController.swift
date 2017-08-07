@@ -132,9 +132,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    func save() {
+    func save(memedImage: UIImage) {
         // Create the meme
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: self.memedImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
         
         
     }
