@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -40,29 +40,33 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-8h-S7c">
-                                <rect key="frame" x="132" y="56" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-8h-S7c">
+                                <rect key="frame" x="36" y="56" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-xr-Ri5">
-                                <rect key="frame" x="132" y="581" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-xr-Ri5">
+                                <rect key="frame" x="36" y="581" width="303" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aaa-8h-S7c" secondAttribute="trailing" constant="20" id="4xT-Al-EEU"/>
+                            <constraint firstItem="5V1-xr-Ri5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="C16-Az-Cmx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hKb-o8-aIU" secondAttribute="trailing" id="HRL-Pq-0WX"/>
+                            <constraint firstItem="Aaa-8h-S7c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Ka8-Ss-RDl"/>
                             <constraint firstItem="QMU-J8-8be" firstAttribute="top" secondItem="hKb-o8-aIU" secondAttribute="bottom" constant="50" id="PSQ-7a-lB9"/>
                             <constraint firstItem="hKb-o8-aIU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WYi-D9-tsc"/>
+                            <constraint firstItem="5V1-xr-Ri5" firstAttribute="top" secondItem="hKb-o8-aIU" secondAttribute="bottom" constant="8" symbolic="YES" id="ZHe-7K-t4Y"/>
                             <constraint firstItem="QMU-J8-8be" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bRv-ja-AOT"/>
                             <constraint firstItem="hKb-o8-aIU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lq7-QQ-Lmd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5V1-xr-Ri5" secondAttribute="trailing" constant="20" id="nMp-qF-VYC"/>
                             <constraint firstItem="hKb-o8-aIU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u2E-nm-Sqs"/>
+                            <constraint firstItem="hKb-o8-aIU" firstAttribute="top" secondItem="Aaa-8h-S7c" secondAttribute="bottom" constant="8" symbolic="YES" id="uYY-a2-34X"/>
                             <constraint firstAttribute="trailing" secondItem="QMU-J8-8be" secondAttribute="trailing" id="w1N-XZ-44a"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QMU-J8-8be" secondAttribute="bottom" id="wOG-L1-2Mb"/>
                         </constraints>
