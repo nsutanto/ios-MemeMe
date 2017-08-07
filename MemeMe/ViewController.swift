@@ -21,9 +21,8 @@ struct Meme {
 let memeTextAttributes:[String:Any] = [
     NSStrokeColorAttributeName: UIColor.black,
     NSForegroundColorAttributeName: UIColor.white,
-    NSBackgroundColorAttributeName : UIColor.clear,
     NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-    NSStrokeWidthAttributeName: 3.0]
+    NSStrokeWidthAttributeName: -5.0]
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -44,11 +43,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+        
+        // Note : Default Text Attributes has to be set first before setting the allignment
         topTextField.textAlignment = NSTextAlignment.center
         bottomTextField.textAlignment = NSTextAlignment.center
         
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
         
     }
     
