@@ -74,13 +74,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pN4-rn-eOX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="1ys-Nq-5Hu"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="EMM-vW-ur0"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="1ys-Nq-5Hu">
+                            <connections>
+                                <action selector="performShare:" destination="BYZ-38-t0r" id="pRf-cj-1mc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="EMM-vW-ur0">
+                            <connections>
+                                <action selector="performCancel:" destination="BYZ-38-t0r" id="Yaj-IB-c2I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="5V1-xr-Ri5" id="1oh-dc-e2j"/>
                         <outlet property="cameraButton" destination="ZX8-09-sS2" id="1aV-R5-Jp0"/>
+                        <outlet property="cancelButton" destination="EMM-vW-ur0" id="1jM-0C-4Y2"/>
                         <outlet property="imagePickerView" destination="hKb-o8-aIU" id="Qir-DA-Xo7"/>
+                        <outlet property="shareButton" destination="1ys-Nq-5Hu" id="9GM-sh-kCM"/>
                         <outlet property="topTextField" destination="Aaa-8h-S7c" id="a9r-xD-lg7"/>
                     </connections>
                 </viewController>

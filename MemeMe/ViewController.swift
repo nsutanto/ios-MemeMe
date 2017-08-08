@@ -15,7 +15,6 @@ struct Meme {
     var bottomText : String!
     var image: UIImage!
     var memedImage: UIImage!
-    
 }
 
 let memeTextAttributes:[String:Any] = [
@@ -23,6 +22,10 @@ let memeTextAttributes:[String:Any] = [
     NSForegroundColorAttributeName: UIColor.white,
     NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
     NSStrokeWidthAttributeName: -5.0]
+
+// String Constant
+let TOP_STRING = "TOP"
+let BOTTOM_STRING = "BOTTOM"
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -32,23 +35,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
-    var memedImage: UIImage!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.delegate = self
-        bottomTextField.delegate = self
-        
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
-        // Note : Default Text Attributes has to be set first before setting the allignment
-        topTextField.textAlignment = NSTextAlignment.center
-        bottomTextField.textAlignment = NSTextAlignment.center
+        initTextField(topTextField, TOP_STRING)
+        initTextField(bottomTextField, BOTTOM_STRING)
+        updateButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,14 +71,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func performShare(_ sender: Any) {
+        let image = UIImage()
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func performCancel(_ sender: Any) {
+        topTextField.text = TOP_STRING
+        bottomTextField.text = BOTTOM_STRING
+        imagePickerView.image = nil
+    }
+    
+    
+    func initTextField(_ uiTextField: UITextField, _ text: String) {
+        uiTextField.delegate = self
+        uiTextField.text = text
+        uiTextField.defaultTextAttributes = memeTextAttributes
+        // Note : Default Text Attributes has to be set first before setting the allignment
+        uiTextField.textAlignment = NSTextAlignment.center
+    }
+    
+    func updateButton() {
+        shareButton.isEnabled = (imagePickerView.image == nil ||
+                                topTextField.text == TOP_STRING ||
+                                bottomTextField.text == BOTTOM_STRING) ? false : true
+    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //imagePickerView.contentMode = .scaleAspectFit
             imagePickerView.image = image
         }
         
         dismiss(animated: true, completion: nil)
+        
+        // Update button
+        updateButton()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -91,7 +114,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text == "TOP" || textField.text == "BOTTOM" {
+        if textField.text == TOP_STRING || textField.text == BOTTOM_STRING {
             textField.text = ""
         }
     }
@@ -99,6 +122,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         topTextField.resignFirstResponder()
         bottomTextField.resignFirstResponder()
+        
+        // Update button
+        updateButton()
         
         return true
     }
