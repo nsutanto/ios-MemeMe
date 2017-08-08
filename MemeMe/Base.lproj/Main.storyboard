@@ -90,7 +90,9 @@
                         <outlet property="cameraButton" destination="ZX8-09-sS2" id="1aV-R5-Jp0"/>
                         <outlet property="cancelButton" destination="EMM-vW-ur0" id="1jM-0C-4Y2"/>
                         <outlet property="imagePickerView" destination="hKb-o8-aIU" id="Qir-DA-Xo7"/>
+                        <outlet property="navigationBar" destination="pN4-rn-eOX" id="tLm-Zk-n4w"/>
                         <outlet property="shareButton" destination="1ys-Nq-5Hu" id="9GM-sh-kCM"/>
+                        <outlet property="toolBar" destination="QMU-J8-8be" id="rfz-Rf-V1R"/>
                         <outlet property="topTextField" destination="Aaa-8h-S7c" id="a9r-xD-lg7"/>
                     </connections>
                 </viewController>

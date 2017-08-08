@@ -37,6 +37,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,8 +74,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     @IBAction func performShare(_ sender: Any) {
-        let image = UIImage()
-        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        let memedImageResult = generateMemedImage()
+        let controller = UIActivityViewController(activityItems: [memedImageResult], applicationActivities: nil)
+        
+        controller.completionWithItemsHandler = {(activity, completed, items, error) in
+            if (completed) {
+                self.save(memedImageResult)
+            }
+        }
         self.present(controller, animated: true, completion: nil)
     }
     
@@ -96,6 +104,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         shareButton.isEnabled = (imagePickerView.image == nil ||
                                 topTextField.text == TOP_STRING ||
                                 bottomTextField.text == BOTTOM_STRING) ? false : true
+    }
+    
+    func updateToolbar(_ isHidden: Bool) {
+        toolBar.isHidden = isHidden
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -157,16 +169,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    func save(memedImage: UIImage) {
+    func save(_ memedImage: UIImage) {
         // Create the meme
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
-        
-        
     }
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        updateToolbar(true)
         
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -174,7 +184,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        updateToolbar(false)
         
         return memedImage
     }
