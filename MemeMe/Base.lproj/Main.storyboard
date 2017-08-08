@@ -22,8 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-o8-aIU">
-                                <rect key="frame" x="16" y="44" width="343" height="579"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hKb-o8-aIU">
+                                <rect key="frame" x="16" y="64" width="343" height="559"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMU-J8-8be">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -44,13 +44,13 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aaa-8h-S7c">
-                                <rect key="frame" x="36" y="84" width="303" height="20"/>
+                                <rect key="frame" x="36" y="114" width="303" height="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-xr-Ri5">
-                                <rect key="frame" x="36" y="586" width="303" height="17"/>
+                                <rect key="frame" x="36" y="556" width="303" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -62,13 +62,12 @@
                             <constraint firstItem="5V1-xr-Ri5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="C16-Az-Cmx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hKb-o8-aIU" secondAttribute="trailing" id="HRL-Pq-0WX"/>
                             <constraint firstItem="Aaa-8h-S7c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Ka8-Ss-RDl"/>
+                            <constraint firstItem="hKb-o8-aIU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Tdf-0W-egU"/>
                             <constraint firstItem="hKb-o8-aIU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WYi-D9-tsc"/>
                             <constraint firstItem="QMU-J8-8be" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bRv-ja-AOT"/>
-                            <constraint firstItem="Aaa-8h-S7c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="c5m-fE-Yik"/>
-                            <constraint firstItem="hKb-o8-aIU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lq7-QQ-Lmd"/>
+                            <constraint firstItem="Aaa-8h-S7c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="c5m-fE-Yik"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5V1-xr-Ri5" secondAttribute="trailing" constant="20" id="nMp-qF-VYC"/>
-                            <constraint firstItem="QMU-J8-8be" firstAttribute="top" secondItem="5V1-xr-Ri5" secondAttribute="bottom" constant="20" id="ppd-Vr-57Z"/>
-                            <constraint firstItem="hKb-o8-aIU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u2E-nm-Sqs"/>
+                            <constraint firstItem="QMU-J8-8be" firstAttribute="top" secondItem="5V1-xr-Ri5" secondAttribute="bottom" constant="50" id="ppd-Vr-57Z"/>
                             <constraint firstItem="hKb-o8-aIU" firstAttribute="bottom" secondItem="QMU-J8-8be" secondAttribute="top" id="v61-hr-XKk"/>
                             <constraint firstAttribute="trailing" secondItem="QMU-J8-8be" secondAttribute="trailing" id="w1N-XZ-44a"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QMU-J8-8be" secondAttribute="bottom" id="wOG-L1-2Mb"/>

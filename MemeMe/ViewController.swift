@@ -49,8 +49,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         // Note : Default Text Attributes has to be set first before setting the allignment
         topTextField.textAlignment = NSTextAlignment.center
         bottomTextField.textAlignment = NSTextAlignment.center
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,7 +79,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePickerView.contentMode = .scaleAspectFit
+            //imagePickerView.contentMode = .scaleAspectFit
             imagePickerView.image = image
         }
         
