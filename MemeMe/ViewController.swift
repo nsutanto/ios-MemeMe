@@ -101,9 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     func updateButton() {
-        shareButton.isEnabled = (imagePickerView.image == nil ||
-                                topTextField.text == TOP_STRING ||
-                                bottomTextField.text == BOTTOM_STRING) ? false : true
+        shareButton.isEnabled = (imagePickerView.image == nil) ? false : true
     }
     
     func updateToolbar(_ isHidden: Bool) {

@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Just testing</string>
+	<string>$(PRODUCT_NAME) needs to use photo album</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs to use camera</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
