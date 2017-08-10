@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func performShare(_ sender: Any) {
         let memedImageResult = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImageResult], applicationActivities: nil)
-        
+        controller.popoverPresentationController?.sourceView = self.view
         controller.completionWithItemsHandler = {(activity, completed, items, error) in
             if (completed) {
                 self.save(memedImageResult)
