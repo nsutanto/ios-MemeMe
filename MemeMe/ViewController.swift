@@ -9,14 +9,6 @@
 import UIKit
 
 
-struct Meme {
-    
-    var topText : String!
-    var bottomText : String!
-    var image: UIImage!
-    var memedImage: UIImage!
-}
-
 let memeTextAttributes:[String:Any] = [
     NSStrokeColorAttributeName: UIColor.black,
     NSForegroundColorAttributeName: UIColor.white,
@@ -27,7 +19,7 @@ let memeTextAttributes:[String:Any] = [
 let TOP_STRING = "TOP"
 let BOTTOM_STRING = "BOTTOM"
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -60,17 +52,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
 
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(.photoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        pickAnImage(.camera)
     }
     
     @IBAction func performShare(_ sender: Any) {
@@ -89,6 +75,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         topTextField.text = TOP_STRING
         bottomTextField.text = BOTTOM_STRING
         imagePickerView.image = nil
+        updateButton()
     }
     
     
@@ -100,43 +87,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         uiTextField.textAlignment = NSTextAlignment.center
     }
     
+    func pickAnImage(_ imageSource: UIImagePickerControllerSourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = imageSource
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     func updateButton() {
         shareButton.isEnabled = (imagePickerView.image == nil) ? false : true
     }
     
     func updateToolbar(_ isHidden: Bool) {
         toolBar.isHidden = isHidden
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePickerView.image = image
-        }
-        
-        dismiss(animated: true, completion: nil)
-        
-        // Update button
-        updateButton()
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.text == TOP_STRING || textField.text == BOTTOM_STRING {
-            textField.text = ""
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        topTextField.resignFirstResponder()
-        bottomTextField.resignFirstResponder()
-        
-        // Update button
-        updateButton()
-        
-        return true
     }
     
     func keyboardWillShow(_ notification:Notification) {
@@ -168,8 +131,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     func save(_ memedImage: UIImage) {
-        // Create the meme
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
+        if imagePickerView.image != nil && topTextField.text != nil && bottomTextField.text != nil
+        {
+            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
+        }
     }
     
     func generateMemedImage() -> UIImage {
