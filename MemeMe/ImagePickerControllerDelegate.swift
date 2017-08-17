@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension ViewController: UIImagePickerControllerDelegate {
+extension EditMemeViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image

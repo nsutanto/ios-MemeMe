@@ -8,5 +8,5 @@
 import UIKit
 import Foundation
 
-extension ViewController: UINavigationControllerDelegate {
+extension EditMemeViewController: UINavigationControllerDelegate {
 }

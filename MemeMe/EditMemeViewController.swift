@@ -8,18 +8,18 @@
 
 import UIKit
 
+class EditMemeViewController: UIViewController, UITextFieldDelegate {
 
-let memeTextAttributes:[String:Any] = [
-    NSStrokeColorAttributeName: UIColor.black,
-    NSForegroundColorAttributeName: UIColor.white,
-    NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-    NSStrokeWidthAttributeName: -5.0]
+    // String Constant
+    let TOP_STRING = "TOP"
+    let BOTTOM_STRING = "BOTTOM"
+    
+    let memeTextAttributes:[String:Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName: -5.0]
 
-// String Constant
-let TOP_STRING = "TOP"
-let BOTTOM_STRING = "BOTTOM"
-
-class ViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var toolBar: UIToolbar!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         controller.popoverPresentationController?.sourceView = self.view
         controller.completionWithItemsHandler = {(activity, completed, items, error) in
             if (completed) {
-                self.save(memedImageResult)
+                self.save()
             }
         }
         self.present(controller, animated: true, completion: nil)
@@ -130,10 +131,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    func save(_ memedImage: UIImage) {
+    func save() {
         if imagePickerView.image != nil && topTextField.text != nil && bottomTextField.text != nil
         {
-            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
+            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memes.append(meme)
         }
     }
     
