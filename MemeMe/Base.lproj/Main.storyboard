@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,13 +149,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCellID" id="2XE-zd-if7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCustomCell" id="2XE-zd-if7" customClass="TableCustomCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2XE-zd-if7" id="Rwf-m8-Xnj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-p0-3pX" userLabel="Meme Image View">
+                                            <rect key="frame" x="8" y="8" width="27.5" height="27.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="BjA-p0-3pX" secondAttribute="height" multiplier="1:1" id="ptS-VG-lwv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="textMeme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h2-gJ-QLM" userLabel="MemeText">
+                                            <rect key="frame" x="35.5" y="8" width="331.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="topMargin" secondItem="9h2-gJ-QLM" secondAttribute="top" id="ED4-ne-Ekg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9h2-gJ-QLM" secondAttribute="trailing" id="F8A-Th-KqC"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="BjA-p0-3pX" secondAttribute="bottom" id="L10-Lb-OFA"/>
+                                        <constraint firstItem="9h2-gJ-QLM" firstAttribute="leading" secondItem="BjA-p0-3pX" secondAttribute="trailing" id="ME1-w4-yP7"/>
+                                        <constraint firstAttribute="topMargin" secondItem="BjA-p0-3pX" secondAttribute="top" id="OIb-8q-y98"/>
+                                        <constraint firstItem="BjA-p0-3pX" firstAttribute="leading" secondItem="Rwf-m8-Xnj" secondAttribute="leadingMargin" id="l5l-4x-WXn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="memeImage" destination="BjA-p0-3pX" id="gAb-yU-51m"/>
+                                    <outlet property="textLabel" destination="9h2-gJ-QLM" id="1GO-V7-36h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -214,9 +241,8 @@
         <!--Sent Memes Collection View-->
         <scene sceneID="Z3O-bi-MUF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8wB-AQ-zoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="Rg5-An-Ibq" userLabel="Sent Memes Collection View" customClass="SentMemesCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="D6X-bN-UQI">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="D6X-bN-UQI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -251,6 +277,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wB-AQ-zoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-923" y="495"/>
         </scene>
@@ -260,6 +287,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hQe-Hr-0a7"/>
+        <segue reference="01X-gm-h4v"/>
     </inferredMetricsTieBreakers>
 </document>
