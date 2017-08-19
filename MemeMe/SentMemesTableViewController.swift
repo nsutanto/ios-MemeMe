@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SentMemesTableViewController: UIViewController {
+class SentMemesTableViewController: UITableViewController {
 
     var memes = [Meme]()
     
@@ -22,6 +22,17 @@ class SentMemesTableViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func createMeme(_ sender: Any) {
+        performSegue(withIdentifier: "segueCreateMeme", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //if segue.identifier == "segueShowResult" {
+        //    let vc = segue.destination as! ResultViewController
+        //    vc.userChoice = getUserShape(sender as! UIButton)
+        //}
     }
     
 

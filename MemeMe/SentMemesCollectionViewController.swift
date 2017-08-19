@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SentMemesCollectionViewController: UIViewController {
+class SentMemesCollectionViewController: UICollectionViewController {
 
     var memes = [Meme]()
     
@@ -24,6 +24,9 @@ class SentMemesCollectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func createMeme(_ sender: Any) {
+    
+    }
 
     /*
     // MARK: - Navigation
