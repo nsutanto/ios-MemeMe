@@ -77,6 +77,7 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
         bottomTextField.text = BOTTOM_STRING
         imagePickerView.image = nil
         updateButton()
+        dismiss(animated: true, completion: nil)
     }
     
     
