@@ -31,6 +31,7 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navigationBarMeme: UINavigationBar!
     
     
     override func viewDidLoad() {
@@ -66,7 +67,7 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
         controller.popoverPresentationController?.sourceView = self.view
         controller.completionWithItemsHandler = {(activity, completed, items, error) in
             if (completed) {
-                self.save()
+                self.save(memedImageResult)
             }
         }
         self.present(controller, animated: true, completion: nil)
@@ -102,6 +103,8 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
     
     func updateToolbar(_ isHidden: Bool) {
         toolBar.isHidden = isHidden
+        navigationBarMeme.isHidden = isHidden
+        
     }
     
     func keyboardWillShow(_ notification:Notification) {
@@ -132,13 +135,15 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    func save() {
+    func save(_ memedImageResult : UIImage) {
         if imagePickerView.image != nil && topTextField.text != nil && bottomTextField.text != nil
         {
-            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: generateMemedImage())
+            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImageResult)
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.memes.append(meme)
+            
+            dismiss(animated: true, completion: nil)
         }
     }
     
