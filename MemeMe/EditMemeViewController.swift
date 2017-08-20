@@ -37,6 +37,8 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Edit Meme Did Load")
+        
         initTextField(topTextField, TOP_STRING)
         initTextField(bottomTextField, BOTTOM_STRING)
         updateButton()

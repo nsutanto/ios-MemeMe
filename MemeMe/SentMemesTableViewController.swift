@@ -14,6 +14,8 @@ class SentMemesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Table Did Load")
 
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
@@ -21,12 +23,23 @@ class SentMemesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("Table Will Appear")
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewControllerID") as! DetailViewController
+        
+        //Populate view controller with data from the selected item
+        detailController.memedImage = memes[(indexPath as NSIndexPath).row]
+        
+        // Present the view controller using navigation
+        navigationController!.pushViewController(detailController, animated: true)
         
     }
     
@@ -37,7 +50,7 @@ class SentMemesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let memeImage = memes[(indexPath as NSIndexPath).row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCustomCell", for: indexPath) as! TableCustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemedTableCustomCell", for: indexPath) as! TableCustomCell
         
         cell.memeImage?.image = memeImage.memedImage
         cell.memeText?.text = memeImage.topText! + "..." + memeImage.bottomText!
