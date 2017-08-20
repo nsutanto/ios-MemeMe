@@ -27,11 +27,6 @@ class SentMemesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: Implement to push the next story node.
-        //let nextStoryNode = storyNode.storyNodeForIndex(index: (indexPath as NSIndexPath).row)
-        //let controller = self.storyboard!.instantiateViewController(withIdentifier: "StoryNodeViewController") as! StoryNodeViewController
-        //controller.storyNode = nextStoryNode
-        //self.navigationController!.pushViewController(controller, animated: true)
         
     }
     
@@ -41,8 +36,8 @@ class SentMemesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let memeImage = memes[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCustomCell") as! TableCustomCell
+        let memeImage = memes[(indexPath as NSIndexPath).row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCustomCell", for: indexPath) as! TableCustomCell
         
         cell.memeImage?.image = memeImage.memedImage
         cell.memeText?.text = memeImage.topText! + "..." + memeImage.bottomText!

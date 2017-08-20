@@ -64,7 +64,7 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func performShare(_ sender: Any) {
         let memedImageResult = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImageResult], applicationActivities: nil)
-        controller.popoverPresentationController?.sourceView = self.view
+        //controller.popoverPresentationController?.sourceView = self.view
         controller.completionWithItemsHandler = {(activity, completed, items, error) in
             if (completed) {
                 self.save(memedImageResult)
@@ -104,7 +104,6 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
     func updateToolbar(_ isHidden: Bool) {
         toolBar.isHidden = isHidden
         navigationBarMeme.isHidden = isHidden
-        
     }
     
     func keyboardWillShow(_ notification:Notification) {

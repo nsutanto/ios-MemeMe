@@ -146,13 +146,13 @@
         <scene sceneID="Vns-ex-pPV">
             <objects>
                 <tableViewController id="7pR-J3-9H7" userLabel="Sent Memes Table View Controller" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="25" sectionFooterHeight="25" id="KMk-Bj-cYe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="50" sectionFooterHeight="50" id="KMk-Bj-cYe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCustomCell" rowHeight="125" id="2XE-zd-if7" customClass="TableCustomCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="25" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2XE-zd-if7" id="Rwf-m8-Xnj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
@@ -161,11 +161,12 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-p0-3pX" userLabel="Meme Image View">
                                             <rect key="frame" x="8" y="8" width="108.5" height="108.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="BjA-p0-3pX" secondAttribute="height" multiplier="1:1" id="ptS-VG-lwv"/>
+                                                <constraint firstAttribute="width" constant="108.5" id="1tp-jZ-YsL"/>
+                                                <constraint firstAttribute="width" secondItem="BjA-p0-3pX" secondAttribute="height" multiplier="1:1" id="NDS-g7-JMo"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Meme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h2-gJ-QLM" userLabel="Meme Text">
-                                            <rect key="frame" x="116.5" y="8" width="250.5" height="108.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Meme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h2-gJ-QLM" userLabel="Meme Text">
+                                            <rect key="frame" x="124.5" y="8" width="242.5" height="108.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -176,7 +177,7 @@
                                         <constraint firstAttribute="topMargin" secondItem="9h2-gJ-QLM" secondAttribute="top" id="ED4-ne-Ekg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="9h2-gJ-QLM" secondAttribute="trailing" id="F8A-Th-KqC"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="BjA-p0-3pX" secondAttribute="bottom" id="L10-Lb-OFA"/>
-                                        <constraint firstItem="9h2-gJ-QLM" firstAttribute="leading" secondItem="BjA-p0-3pX" secondAttribute="trailing" id="ME1-w4-yP7"/>
+                                        <constraint firstItem="9h2-gJ-QLM" firstAttribute="leading" secondItem="BjA-p0-3pX" secondAttribute="trailing" constant="8" id="ME1-w4-yP7"/>
                                         <constraint firstAttribute="topMargin" secondItem="BjA-p0-3pX" secondAttribute="top" id="OIb-8q-y98"/>
                                         <constraint firstItem="BjA-p0-3pX" firstAttribute="leading" secondItem="Rwf-m8-Xnj" secondAttribute="leadingMargin" id="l5l-4x-WXn"/>
                                     </constraints>
