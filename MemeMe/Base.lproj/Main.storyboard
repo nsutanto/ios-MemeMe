@@ -96,18 +96,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QMU-J8-8be" secondAttribute="bottom" id="wOG-L1-2Mb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pN4-rn-eOX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="1ys-Nq-5Hu">
-                            <connections>
-                                <action selector="performShare:" destination="BYZ-38-t0r" id="pRf-cj-1mc"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="EMM-vW-ur0">
-                            <connections>
-                                <action selector="performCancel:" destination="BYZ-38-t0r" id="Yaj-IB-c2I"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="bottomTextField" destination="5V1-xr-Ri5" id="1oh-dc-e2j"/>
                         <outlet property="cameraButton" destination="ZX8-09-sS2" id="1aV-R5-Jp0"/>
@@ -136,38 +124,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-51-p7e">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="VSA-fb-5CF">
-                                        <barButtonItem key="leftBarButtonItem" title="Sent Memes" id="F5t-8m-1mH">
-                                            <connections>
-                                                <action selector="performCancel:" destination="t87-du-myS" id="dir-np-DYU"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="QSg-RE-vNq">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="presentation" id="ELU-la-dJ0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-wu-0HE">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-wu-0HE">
+                                <rect key="frame" x="0.0" y="-16" width="375" height="683"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="rZN-wu-0HE" firstAttribute="top" secondItem="i6O-0H-A82" secondAttribute="bottom" constant="-16" id="18E-eM-1er"/>
                             <constraint firstItem="rZN-wu-0HE" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="3qe-nY-PGc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="J1W-51-p7e" secondAttribute="trailing" constant="-16" id="HH6-xe-HLu"/>
                             <constraint firstItem="qFS-od-ogH" firstAttribute="top" secondItem="rZN-wu-0HE" secondAttribute="bottom" id="OFZ-x7-nFg"/>
-                            <constraint firstItem="rZN-wu-0HE" firstAttribute="top" secondItem="J1W-51-p7e" secondAttribute="bottom" id="RKB-yY-YJb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rZN-wu-0HE" secondAttribute="trailing" constant="-16" id="aGA-Ne-fdv"/>
-                            <constraint firstItem="J1W-51-p7e" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="fJv-F8-HQS"/>
-                            <constraint firstItem="J1W-51-p7e" firstAttribute="top" secondItem="i6O-0H-A82" secondAttribute="bottom" id="rhv-ua-LId"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7BO-Ao-uwe">
+                        <barButtonItem key="backBarButtonItem" title="Sent Memes" id="BKH-z7-Mht">
+                            <connections>
+                                <action selector="performCancel:" destination="t87-du-myS" id="Ktt-fe-Qcj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="xel-Gd-9KG" userLabel="Edjt">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="VID-jo-Upw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -299,40 +279,6 @@
         <scene sceneID="Z3O-bi-MUF">
             <objects>
                 <collectionViewController id="Rg5-An-Ibq" userLabel="Sent Memes Collection View" customClass="SentMemesCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="D6X-bN-UQI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iCz-GW-Uhl">
-                            <size key="itemSize" width="129" height="110"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemedCollectionViewCell" id="EVt-3n-GZ9" customClass="CollectionViewCustomCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="129" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="129" height="110"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XfG-A5-5DF">
-                                            <rect key="frame" x="0.0" y="0.0" width="129" height="110"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                </view>
-                                <connections>
-                                    <outlet property="memedImage" destination="XfG-A5-5DF" id="zMF-Qq-k43"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Rg5-An-Ibq" id="F1T-0G-s2x"/>
-                            <outlet property="delegate" destination="Rg5-An-Ibq" id="Pbo-Es-wie"/>
-                        </connections>
-                    </collectionView>
                     <navigationItem key="navigationItem" title="Sent Memes" id="7jB-Lt-lu5" userLabel="Sent Memes">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="ccJ-bg-oLd"/>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="4UQ-3E-dVG">
@@ -352,6 +298,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ELU-la-dJ0"/>
+        <segue reference="VID-jo-Upw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,15 +12,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     var memes = [Meme]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        memes = appDelegate.memes
-        
-        collectionView?.reloadData()
-        print("Function did load")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +22,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
         
         collectionView?.reloadData()
+        tabBarController?.tabBar.isHidden = false
         print("Function will Appear")
     }
     
