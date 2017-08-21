@@ -12,8 +12,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     var memes = [Meme]()
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let space:CGFloat = 1.0
+        let width = (view.frame.size.width - (2 * space)) / 3.0
+        let height = (view.frame.size.height - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: width, height: height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,7 +33,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
         collectionView?.reloadData()
         tabBarController?.tabBar.isHidden = false
-        print("Function will Appear")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,14 +46,18 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemedCollectionViewCell", for: indexPath) as! CollectionViewCustomCell
         
         cell.memedImage?.image = memeImage.memedImage
-       
-        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "DetailViewControllerID") as! DetailViewController
         
+        //Populate view controller with data from the selected item
+        detailController.memedImage = memes[(indexPath as NSIndexPath).row]
+        
+        // Present the view controller using navigation
+        navigationController!.pushViewController(detailController, animated: true)
     }
 
 }
