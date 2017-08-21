@@ -136,9 +136,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-51-p7e">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-51-p7e">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="VSA-fb-5CF">
                                         <barButtonItem key="leftBarButtonItem" title="Sent Memes" id="F5t-8m-1mH">
@@ -154,13 +153,23 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-wu-0HE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-wu-0HE">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rZN-wu-0HE" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="3qe-nY-PGc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J1W-51-p7e" secondAttribute="trailing" constant="-16" id="HH6-xe-HLu"/>
+                            <constraint firstItem="qFS-od-ogH" firstAttribute="top" secondItem="rZN-wu-0HE" secondAttribute="bottom" id="OFZ-x7-nFg"/>
+                            <constraint firstItem="rZN-wu-0HE" firstAttribute="top" secondItem="J1W-51-p7e" secondAttribute="bottom" id="RKB-yY-YJb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rZN-wu-0HE" secondAttribute="trailing" constant="-16" id="aGA-Ne-fdv"/>
+                            <constraint firstItem="J1W-51-p7e" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="fJv-F8-HQS"/>
+                            <constraint firstItem="J1W-51-p7e" firstAttribute="top" secondItem="i6O-0H-A82" secondAttribute="bottom" id="rhv-ua-LId"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="rZN-wu-0HE" id="Qin-hI-kDe"/>
                     </connections>
@@ -345,6 +354,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="01X-gm-h4v"/>
+        <segue reference="ELU-la-dJ0"/>
     </inferredMetricsTieBreakers>
 </document>
