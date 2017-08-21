@@ -205,41 +205,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemedTableCustomCell" rowHeight="125" id="2XE-zd-if7" customClass="TableCustomCell" customModule="MemeMe" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemedTableCustomCell" id="sXb-yR-MEm" customClass="TableCustomCell" customModule="MemeMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2XE-zd-if7" id="Rwf-m8-Xnj">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sXb-yR-MEm" id="2PP-De-mz6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BjA-p0-3pX" userLabel="Meme Image View">
-                                            <rect key="frame" x="8" y="8" width="108.5" height="108.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1y-KW-QsV">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="108.5" id="1tp-jZ-YsL"/>
-                                                <constraint firstAttribute="width" secondItem="BjA-p0-3pX" secondAttribute="height" multiplier="1:1" id="NDS-g7-JMo"/>
+                                                <constraint firstAttribute="width" secondItem="Z1y-KW-QsV" secondAttribute="height" multiplier="1:1" id="sA5-aG-M0D"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Meme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9h2-gJ-QLM" userLabel="Meme Text">
-                                            <rect key="frame" x="124.5" y="8" width="242.5" height="108.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-Cc-QYt">
+                                            <rect key="frame" x="133" y="62.5" width="226" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9h2-gJ-QLM" firstAttribute="centerY" secondItem="BjA-p0-3pX" secondAttribute="centerY" id="7lf-6G-f55"/>
-                                        <constraint firstAttribute="topMargin" secondItem="9h2-gJ-QLM" secondAttribute="top" id="ED4-ne-Ekg"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="9h2-gJ-QLM" secondAttribute="trailing" id="F8A-Th-KqC"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="BjA-p0-3pX" secondAttribute="bottom" id="L10-Lb-OFA"/>
-                                        <constraint firstItem="9h2-gJ-QLM" firstAttribute="leading" secondItem="BjA-p0-3pX" secondAttribute="trailing" constant="8" id="ME1-w4-yP7"/>
-                                        <constraint firstAttribute="topMargin" secondItem="BjA-p0-3pX" secondAttribute="top" id="OIb-8q-y98"/>
-                                        <constraint firstItem="BjA-p0-3pX" firstAttribute="leading" secondItem="Rwf-m8-Xnj" secondAttribute="leadingMargin" id="l5l-4x-WXn"/>
+                                        <constraint firstItem="Z1y-KW-QsV" firstAttribute="centerY" secondItem="2PP-De-mz6" secondAttribute="centerY" id="6YB-5M-1SV"/>
+                                        <constraint firstItem="Hw1-Cc-QYt" firstAttribute="centerY" secondItem="2PP-De-mz6" secondAttribute="centerY" id="O7f-Sk-8Cm"/>
+                                        <constraint firstItem="Hw1-Cc-QYt" firstAttribute="leading" secondItem="Z1y-KW-QsV" secondAttribute="trailing" constant="8" id="PEr-ca-bRt"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Hw1-Cc-QYt" secondAttribute="trailing" constant="8" id="Roe-LP-YDz"/>
+                                        <constraint firstItem="Z1y-KW-QsV" firstAttribute="top" secondItem="2PP-De-mz6" secondAttribute="top" id="eFw-A2-FLY"/>
+                                        <constraint firstAttribute="bottom" secondItem="Z1y-KW-QsV" secondAttribute="bottom" id="v4v-BM-Jy1"/>
+                                        <constraint firstItem="Z1y-KW-QsV" firstAttribute="leading" secondItem="2PP-De-mz6" secondAttribute="leading" id="yD7-7b-qOx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="memeImage" destination="BjA-p0-3pX" id="gAb-yU-51m"/>
-                                    <outlet property="memeText" destination="9h2-gJ-QLM" id="ktY-wP-tP0"/>
-                                    <outlet property="textLabel" destination="9h2-gJ-QLM" id="1GO-V7-36h"/>
+                                    <outlet property="memeImage" destination="Z1y-KW-QsV" id="GKo-gs-h1Q"/>
+                                    <outlet property="memeText" destination="Hw1-Cc-QYt" id="rq3-Lk-WWH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -261,7 +259,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shc-E7-slo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-922" y="-285"/>
+            <point key="canvasLocation" x="-922.39999999999998" y="-285.60719640179911"/>
         </scene>
         <!--Navigation Controller Table View-->
         <scene sceneID="6HI-oK-dLV">
@@ -354,6 +352,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ELU-la-dJ0"/>
+        <segue reference="01X-gm-h4v"/>
     </inferredMetricsTieBreakers>
 </document>
