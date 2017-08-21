@@ -155,9 +155,9 @@
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-wu-0HE">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rZN-wu-0HE" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="3qe-nY-PGc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J1W-51-p7e" secondAttribute="trailing" constant="-16" id="HH6-xe-HLu"/>
@@ -352,6 +352,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="01X-gm-h4v"/>
+        <segue reference="ELU-la-dJ0"/>
     </inferredMetricsTieBreakers>
 </document>

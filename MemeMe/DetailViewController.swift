@@ -17,12 +17,10 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = memedImage.memedImage
+        
+        tabBarController?.tabBar.isHidden = true
     }
     @IBAction func performCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 }
