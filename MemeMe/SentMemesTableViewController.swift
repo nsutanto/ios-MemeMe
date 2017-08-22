@@ -11,6 +11,7 @@ import UIKit
 class SentMemesTableViewController: UITableViewController {
 
     var memes = [Meme]()
+    var deleteMemeIndexPath: IndexPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,5 +51,44 @@ class SentMemesTableViewController: UITableViewController {
        
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            deleteMemeIndexPath = indexPath
+            let meme = memes[indexPath.row]
+            confirmDelete(meme)
+        }
+    }
+    
+    func confirmDelete(_ meme: Meme) {
+        let alert = UIAlertController(title: "Delete Image", message: "Are you sure you want to permanently delete?", preferredStyle: .actionSheet)
+        
+        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteMeme)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: handleCancelDelete)
+        
+        alert.addAction(DeleteAction)
+        alert.addAction(CancelAction)
+        
+        // Support display in iPad
+        alert.popoverPresentationController?.sourceView = self.view
+        //alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+        
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func handleDeleteMeme(alertAction: UIAlertAction!) -> Void {
+        if let indexPath = deleteMemeIndexPath {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memes.remove(at: indexPath.row)
+            memes.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    func handleCancelDelete(alertAction: UIAlertAction!) {
+        deleteMemeIndexPath = nil
+    }
+
 
 }
