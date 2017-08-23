@@ -21,18 +21,6 @@ class DetailViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detailToEdit" {
-            let editVC = segue.destination as! EditMemeViewController
-            editVC.originalImage = sentMemedImage.image
-            
-        }
-    }
-    
-    @IBAction func performEdit(_ sender: Any) {
-        performSegue(withIdentifier: "detailToEdit", sender: self)
-        
-    }
     @IBAction func performCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

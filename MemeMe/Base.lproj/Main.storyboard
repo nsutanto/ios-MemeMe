@@ -212,17 +212,11 @@
                                 <action selector="performCancel:" destination="t87-du-myS" id="Ktt-fe-Qcj"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="xel-Gd-9KG" userLabel="Edjt">
-                            <connections>
-                                <action selector="performEdit:" destination="t87-du-myS" id="HXz-ma-LHe"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="rZN-wu-0HE" id="Qin-hI-kDe"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="detailToEdit" id="FZE-il-E1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Zg-oH-HiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,6 +328,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FZE-il-E1H"/>
+        <segue reference="MBe-3w-AJB"/>
     </inferredMetricsTieBreakers>
 </document>
