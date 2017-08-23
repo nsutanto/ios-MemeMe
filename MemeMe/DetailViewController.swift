@@ -10,15 +10,28 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    var memedImage : Meme!
+    var sentMemedImage : Meme!
     
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = memedImage.memedImage
+        imageView.image = sentMemedImage.memedImage
         
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailToEdit" {
+            let editVC = segue.destination as! EditMemeViewController
+            editVC.originalImage = sentMemedImage.image
+            
+        }
+    }
+    
+    @IBAction func performEdit(_ sender: Any) {
+        performSegue(withIdentifier: "detailToEdit", sender: self)
+        
     }
     @IBAction func performCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)

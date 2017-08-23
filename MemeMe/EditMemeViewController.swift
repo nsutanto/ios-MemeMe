@@ -33,12 +33,17 @@ class EditMemeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var navigationBarMeme: UINavigationBar!
     
+    var originalImage : UIImage!
+    //var topTextString : String!
+    //var bottomTextString : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Edit Meme Did Load")
         
+        if originalImage != nil {
+            imagePickerView.image = originalImage
+        }
         initTextField(topTextField, TOP_STRING)
         initTextField(bottomTextField, BOTTOM_STRING)
         updateButton()
