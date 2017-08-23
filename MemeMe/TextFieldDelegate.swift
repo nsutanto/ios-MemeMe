@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-extension ViewController: UITextViewDelegate {
+extension EditMemeViewController: UITextViewDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == TOP_STRING || textField.text == BOTTOM_STRING {
             textField.text = ""

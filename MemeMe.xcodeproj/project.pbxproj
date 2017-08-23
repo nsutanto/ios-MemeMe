@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0366B7111F2D2E5E005EAE03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366B7101F2D2E5E005EAE03 /* AppDelegate.swift */; };
-		0366B7131F2D2E5E005EAE03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366B7121F2D2E5E005EAE03 /* ViewController.swift */; };
+		0366B7131F2D2E5E005EAE03 /* EditMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366B7121F2D2E5E005EAE03 /* EditMemeViewController.swift */; };
 		0366B7161F2D2E5E005EAE03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0366B7141F2D2E5E005EAE03 /* Main.storyboard */; };
 		0366B7181F2D2E5E005EAE03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0366B7171F2D2E5E005EAE03 /* Assets.xcassets */; };
 		0366B71B1F2D2E5E005EAE03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0366B7191F2D2E5E005EAE03 /* LaunchScreen.storyboard */; };
@@ -16,12 +16,17 @@
 		6B8B9F9C1F3BD87800BE72F0 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B9F9B1F3BD87800BE72F0 /* ImagePickerControllerDelegate.swift */; };
 		6B8B9F9E1F3BD92500BE72F0 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B9F9D1F3BD92500BE72F0 /* NavigationControllerDelegate.swift */; };
 		6B8B9FA01F3BD9C600BE72F0 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B9F9F1F3BD9C600BE72F0 /* TextFieldDelegate.swift */; };
+		6BA7296C1F4A3F1C00EDD94C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA7296B1F4A3F1C00EDD94C /* DetailViewController.swift */; };
+		6BCA0B721F46873700ADA20D /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA0B711F46873700ADA20D /* SentMemesCollectionViewController.swift */; };
+		6BCA0B741F4687A900ADA20D /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA0B731F4687A900ADA20D /* SentMemesTableViewController.swift */; };
+		6BCA0B791F48F22D00ADA20D /* TableCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA0B781F48F22D00ADA20D /* TableCustomCell.swift */; };
+		6BCA0B7B1F4A259200ADA20D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCA0B7A1F4A259200ADA20D /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0366B70D1F2D2E5E005EAE03 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0366B7101F2D2E5E005EAE03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0366B7121F2D2E5E005EAE03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0366B7121F2D2E5E005EAE03 /* EditMemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemeViewController.swift; sourceTree = "<group>"; };
 		0366B7151F2D2E5E005EAE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0366B7171F2D2E5E005EAE03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0366B71A1F2D2E5E005EAE03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +35,11 @@
 		6B8B9F9B1F3BD87800BE72F0 /* ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
 		6B8B9F9D1F3BD92500BE72F0 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		6B8B9F9F1F3BD9C600BE72F0 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		6BA7296B1F4A3F1C00EDD94C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6BCA0B711F46873700ADA20D /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
+		6BCA0B731F4687A900ADA20D /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
+		6BCA0B781F48F22D00ADA20D /* TableCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCustomCell.swift; sourceTree = "<group>"; };
+		6BCA0B7A1F4A259200ADA20D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +72,12 @@
 		0366B70F1F2D2E5E005EAE03 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				0366B7141F2D2E5E005EAE03 /* Main.storyboard */,
+				6BCA0B6C1F452A4100ADA20D /* ViewController */,
 				6B8B9F9A1F3BD7FB00BE72F0 /* Delegate */,
+				6BCA0B771F48F1F900ADA20D /* CustomCell */,
 				6B8B9F971F3BD0B300BE72F0 /* Model */,
 				0366B7101F2D2E5E005EAE03 /* AppDelegate.swift */,
-				0366B7121F2D2E5E005EAE03 /* ViewController.swift */,
-				0366B7141F2D2E5E005EAE03 /* Main.storyboard */,
 				0366B7171F2D2E5E005EAE03 /* Assets.xcassets */,
 				0366B7191F2D2E5E005EAE03 /* LaunchScreen.storyboard */,
 				0366B71C1F2D2E5E005EAE03 /* Info.plist */,
@@ -90,6 +101,26 @@
 				6B8B9F9F1F3BD9C600BE72F0 /* TextFieldDelegate.swift */,
 			);
 			name = Delegate;
+			sourceTree = "<group>";
+		};
+		6BCA0B6C1F452A4100ADA20D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA0B731F4687A900ADA20D /* SentMemesTableViewController.swift */,
+				6BCA0B711F46873700ADA20D /* SentMemesCollectionViewController.swift */,
+				0366B7121F2D2E5E005EAE03 /* EditMemeViewController.swift */,
+				6BA7296B1F4A3F1C00EDD94C /* DetailViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		6BCA0B771F48F1F900ADA20D /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				6BCA0B781F48F22D00ADA20D /* TableCustomCell.swift */,
+				6BCA0B7A1F4A259200ADA20D /* CollectionViewCell.swift */,
+			);
+			name = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,11 +196,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA7296C1F4A3F1C00EDD94C /* DetailViewController.swift in Sources */,
+				6BCA0B7B1F4A259200ADA20D /* CollectionViewCell.swift in Sources */,
 				6B8B9F9E1F3BD92500BE72F0 /* NavigationControllerDelegate.swift in Sources */,
-				0366B7131F2D2E5E005EAE03 /* ViewController.swift in Sources */,
+				6BCA0B741F4687A900ADA20D /* SentMemesTableViewController.swift in Sources */,
+				0366B7131F2D2E5E005EAE03 /* EditMemeViewController.swift in Sources */,
 				6B8B9FA01F3BD9C600BE72F0 /* TextFieldDelegate.swift in Sources */,
 				6B8B9F991F3BD0D500BE72F0 /* MemeModel.swift in Sources */,
+				6BCA0B791F48F22D00ADA20D /* TableCustomCell.swift in Sources */,
 				6B8B9F9C1F3BD87800BE72F0 /* ImagePickerControllerDelegate.swift in Sources */,
+				6BCA0B721F46873700ADA20D /* SentMemesCollectionViewController.swift in Sources */,
 				0366B7111F2D2E5E005EAE03 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +335,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = N1C0.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +349,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = N1C0.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

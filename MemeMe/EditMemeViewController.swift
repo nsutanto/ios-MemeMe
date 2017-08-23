@@ -8,18 +8,18 @@
 
 import UIKit
 
+class EditMemeViewController: UIViewController, UITextFieldDelegate {
 
-let memeTextAttributes:[String:Any] = [
-    NSStrokeColorAttributeName: UIColor.black,
-    NSForegroundColorAttributeName: UIColor.white,
-    NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-    NSStrokeWidthAttributeName: -5.0]
+    // String Constant
+    let TOP_STRING = "TOP"
+    let BOTTOM_STRING = "BOTTOM"
+    
+    let memeTextAttributes:[String:Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSStrokeWidthAttributeName: -5.0]
 
-// String Constant
-let TOP_STRING = "TOP"
-let BOTTOM_STRING = "BOTTOM"
-
-class ViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationItem!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navigationBarMeme: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func performShare(_ sender: Any) {
         let memedImageResult = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memedImageResult], applicationActivities: nil)
-        controller.popoverPresentationController?.sourceView = self.view
+        //controller.popoverPresentationController?.sourceView = self.view
         controller.completionWithItemsHandler = {(activity, completed, items, error) in
             if (completed) {
                 self.save(memedImageResult)
@@ -76,6 +77,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         bottomTextField.text = BOTTOM_STRING
         imagePickerView.image = nil
         updateButton()
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -100,6 +102,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func updateToolbar(_ isHidden: Bool) {
         toolBar.isHidden = isHidden
+        navigationBarMeme.isHidden = isHidden
     }
     
     func keyboardWillShow(_ notification:Notification) {
@@ -130,10 +133,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
-    func save(_ memedImage: UIImage) {
+    func save(_ memedImageResult : UIImage) {
         if imagePickerView.image != nil && topTextField.text != nil && bottomTextField.text != nil
         {
-            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
+            let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImageResult)
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memes.append(meme)
+            
+            dismiss(animated: true, completion: nil)
         }
     }
     
