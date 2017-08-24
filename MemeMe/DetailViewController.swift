@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         imageView.image = sentMemedImage.memedImage
         
-        tabBarController?.tabBar.isHidden = true
+        tabBarController?.tabBar.isHidden = true        
     }
     
     @IBAction func performCancel(_ sender: Any) {
