@@ -195,15 +195,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rZN-wu-0HE">
-                                <rect key="frame" x="0.0" y="-16" width="375" height="683"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="rZN-wu-0HE" firstAttribute="top" secondItem="i6O-0H-A82" secondAttribute="bottom" constant="-16" id="18E-eM-1er"/>
-                            <constraint firstItem="rZN-wu-0HE" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="3qe-nY-PGc"/>
-                            <constraint firstItem="qFS-od-ogH" firstAttribute="top" secondItem="rZN-wu-0HE" secondAttribute="bottom" id="OFZ-x7-nFg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rZN-wu-0HE" secondAttribute="trailing" constant="-16" id="aGA-Ne-fdv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rZN-wu-0HE" secondAttribute="trailing" constant="-16" id="Dtw-a1-eYt"/>
+                            <constraint firstItem="rZN-wu-0HE" firstAttribute="top" secondItem="i6O-0H-A82" secondAttribute="bottom" id="NIK-Nt-B9b"/>
+                            <constraint firstItem="rZN-wu-0HE" firstAttribute="leading" secondItem="Fnv-Tc-Gxg" secondAttribute="leadingMargin" constant="-16" id="qQU-cG-9Lv"/>
+                            <constraint firstItem="qFS-od-ogH" firstAttribute="top" secondItem="rZN-wu-0HE" secondAttribute="bottom" id="zN3-GT-yHy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7BO-Ao-uwe">
