@@ -16,6 +16,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initLayout(size: view.frame.size)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,8 +27,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
         
         collectionView?.reloadData()
         tabBarController?.tabBar.isHidden = false
-        
-        initLayout()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,24 +54,21 @@ class SentMemesCollectionViewController: UICollectionViewController {
         navigationController!.pushViewController(detailController, animated: true)
     }
     
-    func initLayout() {
-        let space : CGFloat = 1
-        var height : CGFloat!
-        var width : CGFloat!
-        var numberOfPictures : CGFloat!
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        initLayout(size: size)
+    }
     
-        if UIDevice.current.orientation.isLandscape {
-            numberOfPictures = 4
-        } else {
-            numberOfPictures = 3
-        }
-        width = (view.frame.size.width / numberOfPictures) - space
-        height = width
-
+    // Mark : Init Layout
+    func initLayout(size: CGSize) {
+        let space: CGFloat = 3.0
+        let dimension: CGFloat
+        
+        dimension = (size.width - (2 * space)) / 3.0
         
         flowLayout.minimumInteritemSpacing = space
-        flowLayout.minimumLineSpacing = (view.frame.size.width - (numberOfPictures * width)) / (numberOfPictures - 1)
-        flowLayout.itemSize = CGSize(width: width, height: height)
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
 
 }
