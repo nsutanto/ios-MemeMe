@@ -11,8 +11,8 @@ The app enables a user to take a picture, and add text at the top and bottom to 
 ## Add Meme
 <img src="https://media.giphy.com/media/26FfjnOMSG8FSHcsw/giphy.gif" width="300">
 
-## Share Image via Email / Facebook, etc
-<img src="" width="300">
+## Share Image via Email / Facebook / Twitter, etc
+<img src="https://media.giphy.com/media/3ohjV5hktwdn0BOxPy/giphy.gif" width="300">
 
 ## List View
 <img src="" width="300">
