@@ -15,10 +15,8 @@ The app enables a user to take a picture, and add text at the top and bottom to 
 <img src="https://media.giphy.com/media/3ohjV5hktwdn0BOxPy/giphy.gif" width="300">
 
 ## List View
-<img src="" width="300">
+<img src="https://media.giphy.com/media/xUNda5cTGvf23mM9CE/giphy.gif" width="300">
 
 ## Collection View
 <img src="" width="300">
 
-## Delete Image from List View
-<img src="" width="300">
