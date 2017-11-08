@@ -21,5 +21,5 @@ The app enables a user to take a picture, and add text at the top and bottom to 
 <img src="https://media.giphy.com/media/3ohjV9TIlQd5ivpEA0/giphy.gif" width="300">
 
 ## Website
-https://nsutanto.blogspot.com/2017/10/ios-mememe.html
+https://nsutanto.blogspot.com/p/mememe.html
 
